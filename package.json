@@ -20,12 +20,8 @@
   },
   "homepage": "https://github.com/ram-manthry/ts-api-cd-demo#readme",
   "dependencies": {
-    "async": "^3.2.4",
-    "await": "^0.2.6",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "tsc": "^2.0.4",
-    "typescript": "^5.0.4"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "@jest-mock/express": "^2.0.1",
