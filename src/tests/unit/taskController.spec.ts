@@ -1,16 +1,24 @@
 import { getAllTasks } from '../../controllers/taskController'
-import { getMockReq, getMockRes } from '@jest-mock/express'
+import { createRequest, createResponse } from 'node-mocks-http'
 
 describe('getAllTasks', () => {
   test('should send all tasks via res', () => {
     // Arrange
-    const reqMock = getMockReq()
-    const { res } = getMockRes()
+    const req = createRequest()
+    const res = createResponse()
+    const expected = [
+      {
+        id: 1,
+        name: 'Mission 01',
+        description: 'Chatbot',
+        isCompleted: false,
+      },
+    ]
 
     // Act
-    getAllTasks(reqMock, res)
+    getAllTasks(req, res)
 
     // Assert
-    expect(res.send).toBeCalledTimes(1)
+    expect(res.json()._getData()).toEqual(expected)
   })
 })
